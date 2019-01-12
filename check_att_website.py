@@ -23,8 +23,8 @@ browser.find_element_by_xpath('//*[@id="loginButton-lgwgLoginButton"]').click()
 ## clicks the options, returns false if option is unavailable
 def click_options(xpath_element) :
     try :
-        browser.find_element_by_xpath(xpath_element).click()
         time.sleep(3)
+        browser.find_element_by_xpath(xpath_element).click()
         return True
     except :
         return False
@@ -43,14 +43,6 @@ def status_check_and_retry(fun_to_call) :
             print "couldn't find the function"
         print "found it"
 
-def check_popup():
-    try :
-        status_check_and_retry(click_options('//*[@id="fsrInvite"]/section[3]/button[2]'))
-        #browser.find_element_by_xpath('//*[@id="fsrInvite"]/section[3]/button[2]').click()
-        return True
-    except :
-        return False
-
 # click billing option
 status_check_and_retry(click_options('//*[@id="myBilling"]/div[2]/a'))
 
@@ -64,6 +56,6 @@ results_page=res.split('\n') ## gives a list
 
 extra_charge=calulating_cost.internet_charges_per_person(results_page,insurance_overall_cost)
 mobile_charges=calulating_cost.calc_price_each_person_mobile(results_page[4:])
-final_charges_per_user=calulating_cost.calc_amount_owed(mobile_charges,extra_charge,account_owner)
+final_charges_per_user=calulating_cost.calc_amount_owed(mobile_charges,extra_charge,str(account_owner))
 print final_charges_per_user
 print sum(final_charges_per_user.values())
