@@ -5,7 +5,7 @@ import calulating_cost
 
 username=sys.argv[1]
 userpassword=sys.argv[2]
-account_owner=sys.argv[3:] ## first and last name of main account must be given. Extra charges will be remove.
+account_owner=sys.argv[3:] ## first and last name of main account must be given. Extra charges will be removed.
 
 ## Intialize
 insurance_overall_cost=34.99
