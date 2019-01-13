@@ -4,7 +4,7 @@ Run the script from command line after cloning the git project. Script can be im
 
 Use :  
 -----  
-python check_att_website.py [username] [userpassword] [main_account_first_name main_account_last_name]   
+python check_att_website.py [username] [userpassword] [account_owner_first_name account_owner_last_name]   
 
 Requirements:
 -------------   
