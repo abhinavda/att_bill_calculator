@@ -33,10 +33,10 @@ def rounding_values(x):
     return(round(x+0.001,2))
 
 ## Modyfing the dictionary mobile_charges
-def calc_amount_owed(mobile,extra,main_user) :
+def calc_amount_owed(mobile,extra,main_user,insurance) :
     for i in mobile.keys() :
         if i == main_user: ## main user is charged for insurance. Subtracting the cost from his bill and splitting to everyone.
-            mobile[i]=mobile.get(i)-insurance_overall_cost
+            mobile[i]=mobile.get(i)-insurance
         mobile[i]=mobile.get(i)+extra
         mobile[i]=rounding_values(mobile.get(i))
     return mobile ## dictionary with final values
