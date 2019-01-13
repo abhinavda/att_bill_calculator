@@ -5,7 +5,7 @@ import calulating_cost
 
 username=sys.argv[1]
 userpassword=sys.argv[2]
-account_owner=sys.argv[3:] ## Full name should be given. First name followed by last name. Example : Abhinav Damarapati. This was extra charges are remove from main account
+account_owner=sys.argv[3:] ## first and last name of main account must be given. Extra charges will be remove.
 
 ## Intialize
 insurance_overall_cost=34.99
@@ -71,5 +71,5 @@ if len(results_page) >0 :
         nam1 = key.split(" ")
         name = nam1[0][0] + nam1[0][1:].lower() + " " + nam1[1][0] + nam1[1][1:].lower()
         print "%s : $%.2f"%(name,value)
-    print    
+    print
     print "Total : ",sum(final_charges_per_user.values())
